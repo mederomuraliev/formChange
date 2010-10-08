@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>form change plugin</title>
+        <style>
+            #changed { display:none; }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script src="js/jquery.formchange.js"></script>
+        <script>
+            $(function() {
+                $('form').formChange({
+                    change: function() {
+                        $('#changed').show();
+                    },
+                    reset: function() {
+                        $('#changed').hide();
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <h1 id="changed">changed!</h1>
+        <form>
+            <div>
+                <input type="checkbox" name="one"><br>
+            </div>
+            <div>
+                <textarea name="two" cols="20" rows="20">test</textarea>
+                <input type="text" name="name" value="john">
+            </div>
+        </form>
+    </body>
+</html>
